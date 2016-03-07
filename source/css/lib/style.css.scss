@@ -1,0 +1,60 @@
+@import 'functions';
+
+$yellow: #f6b63e;
+$red: #c0392b;
+
+.ng-invalid-required, .ng-invalid, .ng-valid-email{
+	border-color:red;
+}
+
+body{
+	background: url('../img/background.jpg') top center fixed;
+	.black-op{
+		background: rgba(black, .7) top center fixed;
+		padding-bottom: 100px;
+		@media( min-width: 768px ){
+		    padding-bottom: 20px;
+		}
+	}
+	.xmen{
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background: url("../img/xmen.png");
+		background-size: cover;
+		z-index: -1;
+		@media( min-width: 768px ){
+			width: 60%;
+		}
+		.logo{
+			background: url("../img/xmen-logo.png") no-repeat;
+			bottom: 40px;
+			position: absolute;
+			width: 50%;
+			margin-left: 33.33%;
+			height: 100px;
+			background-size: contain;
+		}
+	}
+	.info{
+		margin-top: -20%;
+		color: white;
+		strong{
+			font-size: 1.1em;
+		}
+		a, .legal{
+			color:$yellow;
+		}
+	}
+	#form{
+		a{
+			margin-bottom: 40px;
+		}
+		.warn{
+			color:$red;
+			font-size: 1.1em;
+		}
+	}
+}
