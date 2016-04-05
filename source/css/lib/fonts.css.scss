@@ -1,1 +1,28 @@
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@font-face {
+  font-family: 'FuturaStd-Condensed';
+  src: url('../fonts/FuturaStd-Condensed.eot?#iefix') format('embedded-opentype'),  url('../fonts/FuturaStd-Condensed.otf')  format('opentype'),
+	     url('../fonts/FuturaStd-Condensed.woff') format('woff'), url('../fonts/FuturaStd-Condensed.ttf')  format('truetype'), url('../fonts/FuturaStd-Condensed.svg#FuturaStd-Condensed') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaStd-CondensedBold';
+  src: url('../fonts/FuturaStd-CondensedBold.eot?#iefix') format('embedded-opentype'),  url('../fonts/FuturaStd-CondensedBold.otf')  format('opentype'),
+	     url('../fonts/FuturaStd-CondensedBold.woff') format('woff'), url('../fonts/FuturaStd-CondensedBold.ttf')  format('truetype'), url('../fonts/FuturaStd-CondensedBold.svg#FuturaStd-CondensedBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FuturaStd-CondensedLight';
+  src: url('../fonts/FuturaStd-CondensedLight.eot?#iefix') format('embedded-opentype'),  url('../fonts/FuturaStd-CondensedLight.otf')  format('opentype'),
+       url('../fonts/FuturaStd-CondensedLight.woff') format('woff'), url('../fonts/FuturaStd-CondensedLight.ttf')  format('truetype'), url('../fonts/FuturaStd-CondensedLight.svg#FuturaStd-CondensedLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MyriadPro-Regular';
+  src: url('../fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),  url('../fonts/MyriadPro-Regular.otf')  format('opentype'),
+       url('../fonts/MyriadPro-Regular.woff') format('woff'), url('../fonts/MyriadPro-Regular.ttf')  format('truetype'), url('../fonts/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

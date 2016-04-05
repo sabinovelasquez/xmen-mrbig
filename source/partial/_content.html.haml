@@ -17,27 +17,40 @@
 
 			#form{ :'ng-controller' => 'fireCtrl', :'name' => 'insc' }
 				%form.form-group
-					.col-sm-12
+					.col-sm-12.pad-5
 						.form-group
+							%label
+								Nombre Completo
 							%input.form-control{ :'name' => 'nombre', :'ng-model' => 'nombre', :'type' => 'text', :'placeholder' => 'Ingresa tu nombre completo', :'required' => 'required' }
-					.col-sm-12
+					.col-sm-12.pad-5
 						.form-group
+							%label
+								Email
 							%input.form-control{ :'name' => 'email', :'ng-model' => 'email', :'type' => 'email', :'placeholder' => 'email', :'required' => 'required'  }
-					.col-xs-4
-						.form-group
-							%input.form-control{ :'ng-model' => 'prefijo', :'type' => 'number', :'placeholder' => 'ej: 9', :'required' => 'required'  }
-					.col-xs-8
-						.form-group
-							%input.form-control{ :'ng-model' => 'movil', :'type' => 'number', :'placeholder' => 'ej: 12345678', :'required' => 'required'  }
-					.col-sm-12
-						.form-group
-							%input.form-control{ :'ng-model' => 'code', :'type' => 'text', :'placeholder' => 'Ingresa código', :'required' => 'required'  }
-					.col-xs-6
+					.col-sm-8.pad-5
+						.col-sm-4.col-xs-8.nopad
+							.form-group
+								%label
+									Fono
+								%input.form-control{ :'ng-model' => 'prefijo', :'type' => 'number', :'placeholder' => 'ej: 9', :'required' => 'required'  }
+						.col-sm-8.col-xs-4.nopad
+							.form-group.mar-6
+								%label
+									%span.inv Fono
+								%input.form-control{ :'ng-model' => 'movil', :'type' => 'number', :'placeholder' => 'ej: 12345678', :'required' => 'required'  }
+					.col-sm-4.pad-5
+						.col-sm-12.nopad
+							.form-group
+								%label
+									Código tapa
+								%input.form-control{ :'ng-model' => 'code', :'type' => 'text', :'placeholder' => 'Ingresa código', :'required' => 'required'  }
+					.col-xs-6.pad-5
 						%a.btn.btn-default{ :'ng-click' => 'checkExist()' }
 							enviar código
-					.col-xs-6
+					.col-xs-6.pad-5
 						%p.text-right.warn
 							{{message}}
 		.xmen
 			.logo
+			.fox
 

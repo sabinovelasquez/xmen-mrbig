@@ -6,14 +6,23 @@ $red: #c0392b;
 .ng-invalid-required, .ng-invalid, .ng-valid-email{
 	border-color:red;
 }
-
+html, body, .container, .row{
+	height:100%;
+}
 body{
+	font-family: 'FuturaStd-Condensed';
 	background: url('../img/background.jpg') top center fixed;
+	background-size: cover;
 	.black-op{
 		background: rgba(black, .7) top center fixed;
-		padding-bottom: 100px;
-		@media( min-width: 768px ){
-		    padding-bottom: 20px;
+		min-height: 100%;
+		p{
+			margin: 10px 20px;
+			font-size: 1.3em;
+			a, strong{
+				font-family: 'FuturaStd-CondensedBold';
+				font-size: 1.1em;
+			}
 		}
 	}
 	.xmen{
@@ -22,19 +31,28 @@ body{
 		bottom: 0;
 		width: 100%;
 		height: 100%;
-		background: url("../img/xmen.png");
-		background-size: cover;
+		background: url("../img/xmen.png") bottom right no-repeat;
+		background-size: contain;
 		z-index: -1;
 		@media( min-width: 768px ){
 			width: 60%;
 		}
 		.logo{
-			background: url("../img/xmen-logo.png") no-repeat;
-			bottom: 40px;
+			background: url("../img/xmen-logo.png") center no-repeat;
+			bottom: 15%;
 			position: absolute;
 			width: 50%;
 			margin-left: 33.33%;
-			height: 100px;
+			height: 150px;
+			background-size: contain;
+		}
+		.fox{
+			background: url("../img/fox.png") center no-repeat;
+			bottom: 6%;
+			position: absolute;
+			width: 50%;
+			margin-left: 33.33%;
+			height: 30px;
 			background-size: contain;
 		}
 	}
@@ -49,6 +67,32 @@ body{
 		}
 	}
 	#form{
+		float: left;
+		margin:20px;
+		font-family: 'MyriadPro-Regular';
+		.inv{
+			opacity: 0;
+		}
+		.pad-5{
+			padding-left:0px;
+			padding-right:0px;
+		}
+		.mar-6{
+			margin-left:6px;
+			margin-right:6px;
+		}
+		.nopad{
+			padding-left:0px;
+			padding-right:0px;
+		}
+		label{
+			color:white;
+		}
+		input{
+			-webkit-border-radius: 0px;
+			-moz-border-radius: 0px;
+			border-radius: 0px;
+		}
 		a{
 			margin-bottom: 40px;
 		}
