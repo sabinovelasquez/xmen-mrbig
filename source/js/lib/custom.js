@@ -2,10 +2,17 @@
 
 var app = angular
 
-	.module('app', ['ngAnimate','ui.bootstrap', 'firebase', 'angulartics', 'angulartics.google.analytics'])
+	.module('app', ['ngAnimate', 'ui.bootstrap', 'firebase', 'angulartics', 'angulartics.google.analytics'])
 
 	.controller('fireCtrl', [ '$scope', '$firebaseObject',
 	    function($scope, $firebaseObject) {
+			$scope.submitForm = function() {
+
+				if ($scope.userForm.$valid) {
+					alert('our form is amazing');
+				}
+
+			};
 
 			$scope.saveUser = function() {
 				var itemRef = new Firebase('https://mrbigxmen.firebaseio.com/').child($scope.code);

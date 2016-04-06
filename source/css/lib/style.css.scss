@@ -3,12 +3,21 @@
 $yellow: #f6b63e;
 $red: #c0392b;
 
-.ng-invalid-required, .ng-invalid, .ng-valid-email{
-	border-color:red;
-}
+// .ng-invalid-required, .ng-invalid, .ng-valid-email{
+// 	border-color:$red;
+// }
 html, body, .container, .row{
 	height:100%;
 }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
 body{
 	font-family: 'FuturaStd-Condensed';
 	background: url('../img/background.jpg') top center fixed;
@@ -34,7 +43,7 @@ body{
 		background: url("../img/xmen.png") bottom right no-repeat;
 		background-size: contain;
 		z-index: -1;
-		@media( min-width: 768px ){
+		@media( min-width: 1024px ){
 			width: 60%;
 		}
 		.logo{
@@ -67,9 +76,16 @@ body{
 		}
 	}
 	#form{
-		float: left;
 		margin:20px;
-		font-family: 'MyriadPro-Regular';
+		font-family: 'MyriadPro-Regular';;
+		.has-error, .help-block{
+			font-size: .9em;
+			padding: 0;
+			margin: 5px 0;
+			input{
+				border: 2px solid $red;
+			}
+		}
 		.inv{
 			opacity: 0;
 		}
@@ -85,6 +101,17 @@ body{
 			padding-left:0px;
 			padding-right:0px;
 		}
+		.num{
+			font-size: 28px;
+			color: white;
+			float:left;
+			width:100%;
+		}
+		.note{
+			color:white;
+			position:relative;
+			top:-10px;
+		}
 		label{
 			color:white;
 		}
@@ -93,7 +120,7 @@ body{
 			-moz-border-radius: 0px;
 			border-radius: 0px;
 		}
-		a{
+		a, button{
 			margin-bottom: 40px;
 		}
 		.warn{

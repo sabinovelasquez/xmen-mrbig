@@ -1,6 +1,6 @@
-.container
+.container{ :'ng-controller' => 'fireCtrl' }
 	.row
-		.col-sm-6.col-lg-5.black-op	
+		.col-sm-8.col-lg-6.black-op	
 			.title
 				%img.img-responsive{ :'src' => 'img/title.png' }
 			.info.text-center
@@ -15,37 +15,50 @@
 				%p.legal
 					Promoción válida desde el 1 de abril hasta el 15 de junio de 2016.
 
-			#form{ :'ng-controller' => 'fireCtrl', :'name' => 'insc' }
-				%form.form-group
+			#form
+				%form.form-group{ :'name' => 'userForm', :'ng-submit' => 'submitForm()', :'novalidate' => 'novalidate' }
 					.col-sm-12.pad-5
-						.form-group
+						.form-group{ :'ng-class' => '{ "has-error" : userForm.name.$invalid && !userForm.name.$pristine }' }
 							%label
 								Nombre Completo
-							%input.form-control{ :'name' => 'nombre', :'ng-model' => 'nombre', :'type' => 'text', :'placeholder' => 'Ingresa tu nombre completo', :'required' => 'required' }
+							%input.form-control{ :'name' => 'name', :'ng-model' => 'name', :'type' => 'text', :'placeholder' => 'Ingresa tu nombre completo', :'required' => 'required' }
+							%p.help-block{ :'ng-show' => 'userForm.name.$invalid && !userForm.name.$pristine' }
+								Necesitas ingresar tu nombre para participar
 					.col-sm-12.pad-5
-						.form-group
+						.form-group{ :'ng-class' => '{ "has-error" : userForm.email.$invalid && !userForm.email.$pristine }' }
 							%label
 								Email
 							%input.form-control{ :'name' => 'email', :'ng-model' => 'email', :'type' => 'email', :'placeholder' => 'email', :'required' => 'required'  }
+							%p.help-block{ :'ng-show' => 'userForm.email.$invalid && !userForm.email.$pristine' }
+								Ingresa un email válido
 					.col-sm-8.pad-5
-						.col-sm-4.col-xs-8.nopad
-							.form-group
-								%label
+						.col-sm-2.col-xs-3.nopad
+							%label
+								Fono
+							%span.num +56
+						.col-sm-2.col-xs-3.nopad
+							.form-group{ :'ng-class' => '{ "has-error" : userForm.prefijo.$invalid && !userForm.prefijo.$pristine }' }
+								%label.inv
 									Fono
-								%input.form-control{ :'ng-model' => 'prefijo', :'type' => 'number', :'placeholder' => 'ej: 9', :'required' => 'required'  }
-						.col-sm-8.col-xs-4.nopad
-							.form-group.mar-6
+								%input.form-control{ :'name' => 'prefijo', :'ng-model' => 'prefijo', :'type' => 'number', :'placeholder' => 'ej: 9', :'required' => 'required', :'min' => '1'  }
+								
+						.col-sm-8.col-xs-6.nopad
+							.form-group.mar-6{ :'ng-class' => '{ "has-error" : userForm.movil.$invalid && !userForm.movil.$pristine }' }
 								%label
 									%span.inv Fono
-								%input.form-control{ :'ng-model' => 'movil', :'type' => 'number', :'placeholder' => 'ej: 12345678', :'required' => 'required'  }
+								%input.form-control{ :'name' => 'movil', :'ng-model' => 'movil', :'type' => 'number', :'placeholder' => 'ej: 12345678', :'required' => 'required', :'min' => '1'  }
+						.col-sm-12.nopad
+							%small.note *Ingresa tu prefiijo de celular o código de área
 					.col-sm-4.pad-5
 						.col-sm-12.nopad
 							.form-group
 								%label
 									Código tapa
 								%input.form-control{ :'ng-model' => 'code', :'type' => 'text', :'placeholder' => 'Ingresa código', :'required' => 'required'  }
+						.col-sm-12.nopad
+							%small.note *Conserva tu tapa ganadora
 					.col-xs-6.pad-5
-						%a.btn.btn-default{ :'ng-click' => 'checkExist()' }
+						%button.btn.btn-default{ :'type' => 'submit', :'ng-disabled' => 'userForm.$invalid' }
 							enviar código
 					.col-xs-6.pad-5
 						%p.text-right.warn
