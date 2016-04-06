@@ -1,0 +1,16 @@
+.modal-content
+	.modal-header
+		%button.close{ :'aria-hidden' => 'true', 'ng-click' => 'closeModal()', :type => 'button' }
+			%i.fa.fa-close
+		%h4.modal-title
+			Concurso
+	.modal-body
+		%h3{ :'ng-show' => '!loading' }
+			{{messageTitle}}
+		%p
+			.loading{ :'ng-show' => 'loading' }
+				%i.fa.fa-refresh.fa-spin
+		%p{ :'ng-show' => '!loading', :'ng-bind-html' => 'message | html' }
+	.modal-footer
+		%button{ :'aria-hidden' => 'true', 'ng-click' => 'closeModal()', :type => 'button' }
+			Cerrar

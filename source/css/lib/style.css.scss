@@ -3,9 +3,7 @@
 $yellow: #f6b63e;
 $red: #c0392b;
 
-// .ng-invalid-required, .ng-invalid, .ng-valid-email{
-// 	border-color:$red;
-// }
+
 html, body, .container, .row{
 	height:100%;
 }
@@ -17,14 +15,52 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0; 
 }
-
+.modal-content{
+	border: 1px solid $yellow;
+	background:rgba(black,.9);
+	color:white;
+	.modal-header{
+		border-bottom: 1px solid $yellow;
+		h4{
+			color:$yellow;
+		}
+		.close{
+			color:$yellow;
+		}
+	}
+	.modal-body{
+		p{
+			font-size: 1.2em;
+			strong{
+				color:$yellow;
+			}
+		}
+	}
+	.modal-footer{
+		border-top: 1px solid $yellow;
+		button{
+			color:$yellow;
+			background:black;
+			border: 1px solid $yellow;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+		}
+	}
+}
 body{
 	font-family: 'FuturaStd-Condensed';
 	background: url('../img/background.jpg') top center fixed;
 	background-size: cover;
+	hr{
+		float: left;
+		width: 100%;
+		border: none;
+	}
 	.black-op{
 		background: rgba(black, .7) top center fixed;
 		min-height: 100%;
+		float: left;
 		p{
 			margin: 10px 20px;
 			font-size: 1.3em;
@@ -77,7 +113,10 @@ body{
 	}
 	#form{
 		margin:20px;
-		font-family: 'MyriadPro-Regular';;
+		font-family: 'MyriadPro-Regular';
+		input.code{
+			text-transform: uppercase;
+		}
 		.has-error, .help-block{
 			font-size: .9em;
 			padding: 0;
@@ -127,5 +166,32 @@ body{
 			color:$red;
 			font-size: 1.1em;
 		}
+		.bases{
+			line-height: 54px;
+			color:white;
+			a{
+				color:$yellow;
+			}
+		}
+		button{
+			border: none;
+			background: transparent;
+			.send{
+				opacity: .5;
+				text-transform: uppercase;
+				color:white;
+				cursor: no-drop;
+				text-align: center;
+				line-height: 49px;
+				width:155px;
+				height: 49px;
+				background: url('../img/button.png');
+				&.active{
+					opacity: 1;
+					cursor: pointer;
+				}
+			}
+		}
+		
 	}
 }
