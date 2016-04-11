@@ -14,8 +14,12 @@
 					, además de cientos de entradas al cine y productos exclusivos de la película. 
 				%p.legal
 					Promoción válida desde el 1 de abril hasta el 15 de junio de 2016.
+				%a{ :'ng-click' => 'openMap()' }
+					Mapa de ejemplo
 			%script#modalTemplate{ :'type' => 'text/ng-template' }
 				= partial 'modal'
+			%script#modalMapTemplate{ :'type' => 'text/ng-template' }
+				= partial 'map'
 			#form
 				%form.form-group{ :'name' => 'userForm', :'ng-submit' => 'submitForm()', :'novalidate' => 'novalidate' }
 					.col-sm-12.pad-5

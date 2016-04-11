@@ -5,6 +5,7 @@
 //=require vendor/angular/angular-ui-bootstrap-modal
 //=require vendor/angular/angular-parallax
 //=require vendor/angular/angular-scroll.min
+//=require vendor/ng-map.min
 //=require vendor/firebase
 //=require vendor/angular/angularfire.min
 

@@ -2,7 +2,7 @@
 
 var app = angular
 
-	.module('app', ['ngAnimate', 'ui.bootstrap', 'firebase', 'angulartics', 'angulartics.google.analytics'])
+	.module('app', ['ngAnimate', 'ngMap', 'ui.bootstrap', 'firebase', 'angulartics', 'angulartics.google.analytics'])
 
 	.filter('html', ['$sce',
 	    function ($sce) {
@@ -32,6 +32,17 @@ var app = angular
 				var modalInstance = $uibModal.open({
 					templateUrl: 'modalTemplate',
 					size: 'md',
+					controller: 'ModalInstanceCtrl',
+					scope: $scope
+				});
+
+			}
+
+			$scope.openMap = function () {
+	    		$scope.loading=true;
+				var modalInstance = $uibModal.open({
+					templateUrl: 'modalMapTemplate',
+					size: 'lg',
 					controller: 'ModalInstanceCtrl',
 					scope: $scope
 				});
