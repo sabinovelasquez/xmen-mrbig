@@ -75,6 +75,10 @@
 							Consulta las bases del concurso
 							%a{ :'href' => 'pdf/bases-legales.pdf', :'target' => '_blank' }
 								AQUÍ
+						.bases
+							Revisa los premios
+							%a{ :'href' => 'pdf/premios.pdf', :'target' => '_blank' }
+								AQUÍ
 					.col-lg-6.pad-5
 						%button.pull-right{ :'type' => 'submit', :'ng-disabled' => 'userForm.$invalid' }
 							.send{ :'ng-class' => '{ "active" : !userForm.$invalid }' }
