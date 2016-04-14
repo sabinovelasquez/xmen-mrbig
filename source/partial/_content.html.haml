@@ -14,8 +14,8 @@
 					, además de cientos de entradas al cine y productos exclusivos de la película. 
 				%p.legal
 					Promoción válida desde el 1 de abril hasta el 15 de junio de 2016.
-				%a{ :'ng-click' => 'openMap()' }
-					Mapa de ejemplo
+				-# %a{ :'ng-click' => 'openMap()' }
+				-# 	Mapa de ejemplo
 			%script#modalTemplate{ :'type' => 'text/ng-template' }
 				= partial 'modal'
 			%script#modalMapTemplate{ :'type' => 'text/ng-template' }
@@ -66,9 +66,9 @@
 						.group{ :'ng-class' => '{ "has-error" : userForm.adult.$invalid && !userForm.adult.$pristine }' }
 							%label
 								%input{ :'name' => 'adult', :'ng-model' => 'adult', :'type' => 'checkbox', :'required' => 'required'  }
-								Soy mayor de 18 años
+								Soy mayor de 15 años
 							%p.help-block{ :'ng-show' => 'userForm.adult.$invalid && !userForm.adult.$pristine' }
-								Debes ser mayor de 18 años para participar.
+								Debes ser mayor de 15 años para participar.
 					%hr
 					.col-lg-6.pad-5
 						.bases

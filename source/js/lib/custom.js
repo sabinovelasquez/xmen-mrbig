@@ -59,7 +59,7 @@ var app = angular
 			};
 
 			$scope.saveUser = function() {
-				var itemRef = new Firebase('https://mrbigxmen.firebaseio.com/').child($scope.code);
+				var itemRef = new Firebase('https://mrbigxmen.firebaseio.com/codes/').child($scope.code);
 				$scope.node = $firebaseObject(itemRef);
 				
 				$scope.node.nombre = $scope.name;
@@ -84,7 +84,7 @@ var app = angular
 
 	    	$scope.checkExist = function (){
 
-	    		var itemRef = new Firebase('https://mrbigxmen.firebaseio.com/').child($scope.code);
+	    		var itemRef = new Firebase('https://mrbigxmen.firebaseio.com/codes/').child($scope.code);
 	    		$scope.item = $firebaseObject(itemRef);
 
 	    		$scope.item.$loaded().then(function () {
