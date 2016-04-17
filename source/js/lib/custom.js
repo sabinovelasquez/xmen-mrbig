@@ -3,7 +3,13 @@
 var app = angular
 
 	.module('app', ['ngAnimate', 'ngMap', 'ui.bootstrap', 'firebase', 'angulartics', 'angulartics.google.analytics'])
-
+	.run(['$rootScope',
+			function($rootScope) {
+			$rootScope.$on('mapInitialized', function(evt,map) {
+				google.maps.event.trigger(map, "resize");
+			});
+		}
+	])
 	.filter('html', ['$sce',
 	    function ($sce) {
 			return function (str) {
@@ -12,21 +18,24 @@ var app = angular
 		}
 	])
 
-	.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance',
+	.controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', '$rootScope',
 
-		function ($scope, $uibModalInstance) {
-
+		function ($scope, $uibModalInstance, $rootScope) {
 			$scope.closeModal = function () {
 				$uibModalInstance.dismiss('cancel');
 			};
+			
+			$uibModalInstance.rendered.then(function() {
+				$scope.renderMap=$rootScope.renderMap;
+			});
+
 		}
 
 	])
 
 	.controller('fireCtrl', [ '$scope', '$firebaseObject', '$uibModal',
 	    function($scope, $firebaseObject, $uibModal) {
-	    	
-
+	    
 	    	$scope.openModal = function () {
 	    		$scope.loading=true;
 				var modalInstance = $uibModal.open({
@@ -35,12 +44,12 @@ var app = angular
 					controller: 'ModalInstanceCtrl',
 					scope: $scope
 				});
-
+				
 			}
 
 			$scope.openMap = function () {
-	    		$scope.loading=true;
-				var modalInstance = $uibModal.open({
+
+				$uibModal.open({
 					templateUrl: 'modalMapTemplate',
 					size: 'lg',
 					controller: 'ModalInstanceCtrl',
