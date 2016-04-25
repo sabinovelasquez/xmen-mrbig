@@ -7,6 +7,15 @@ $red: #c0392b;
 html, body, .container, .row{
 	height:100%;
 }
+.black-bg{
+	color: white;
+	background: rgba(black, .8);
+	h2{
+		margin-top: 20px;
+		margin-bottom: 20px;
+		color: $yellow;
+	}
+}
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 

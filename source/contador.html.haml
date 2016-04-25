@@ -1,0 +1,18 @@
+---
+title: Contador - Promoción Mutant Energy
+layout: counter
+---
+
+.container.black-bg{ :'ng-controller' => 'fireCtrl' }
+	%h2.text-center Visitas
+	%h3.text-center.total
+		.loading{ :'ng-show' => '!totales' }
+			contando datos
+			%br
+			%i.fa.fa-refresh.fa-spin
+	%p.text-center{ :'ng-show' => '!totales' } Por favor no cierre su navegador, esto puede demorar dependiendo la conexión.
+	
+	%h3.text-center{ :'ng-show' => 'totales' }
+		Total de códigos:
+		.result
+			{{totales}}
