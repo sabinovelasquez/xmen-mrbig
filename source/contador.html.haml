@@ -16,3 +16,9 @@ layout: counter
 		Total de códigos:
 		.result
 			{{totales}}
+	%h4.text-center
+		Códigos usados:
+		%br
+		%i.fa.fa-refresh.fa-spin{ :'ng-show' => '!usados' }
+		.result{ :'ng-show' => 'usados' }
+			{{usados}}
