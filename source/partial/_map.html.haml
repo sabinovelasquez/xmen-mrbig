@@ -6,24 +6,56 @@
 			Mapa
 	.modal-body
 		%ng-map.map{ :'zoom' => '3', :'center' => '[-31.9741138,-71.4893109]', :'scrollwheel' => 'false', :'map-type-control' => 'false', :'styles' => '[{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]' }
-			%marker{ :'position' => '45.521309, -73.582478', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "montreal")' }
 
-			%marker{ :'position' => '40.728210, -74.002763', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "newyork")' }
-
-			%marker{ :'position' => '36.155335, -115.152182', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "vegas")' }
-
-			%marker{ :'position' => '36.155335, -115.152182', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "vegas")' }
-
-			%info-window#montreal
+			%marker{ :'position' => '51.5287714,-0.2420246', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "london")' }
+			%info-window#london
 				.infowin{ :'ng-non-bindable' => 'ng-non-bindable' }
 					.bodyContent
 						.col-sm-6
-							%img.img-responsive{ :'src' => 'img/locations/montreal.jpg' }
+							%img.img-responsive{ :'src' => 'img/locations/londres.jpg' }
 						.col-sm-6
 							%h3
-								Montreal
+								Londres
 							%p
-								Absorbe las extraordinarias habilidades de los mutantes en un exclusiva Masterclass con especialistas X-Men y conoce esta gran ciudad. 
+								Aprende extraordinaria habilidades en el campo de entrenamiento X-Men. Conoce la las locaciones de X-Mansions y vive una aventura mutante.
+
+			%marker{ :'position' => '-27.986048,153.0428299', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "australia")' }
+			%info-window#australia
+				.infowin{ :'ng-non-bindable' => 'ng-non-bindable' }
+					.bodyContent
+						.col-sm-6
+							%img.img-responsive{ :'src' => 'img/locations/costadeoro.jpg' }
+						.col-sm-6
+							%h3
+								Costa de Oro
+							%p
+								Vive una aventura extrema volando y controlando de cara el Apocalipsis con elementos especiales de aventura acuática y aéreos.
+
+			%marker{ :'position' => '20.7622998,-87.3538734', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "cancun")' }
+			%info-window#cancun
+				.infowin{ :'ng-non-bindable' => 'ng-non-bindable' }
+					.bodyContent
+						.col-sm-6
+							%img.img-responsive{ :'src' => 'img/locations/cancun.jpg' }
+						.col-sm-6
+							%h3
+								Can-Cun
+							%p
+								Explora las pirámides de Chichen Itza experimenta el control de los elementos acuáticos y de vuelo para vivir una experiencia X-treme. 
+
+			%marker{ :'position' => '20.7622998,-87.3538734', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "berlin")' }
+			%info-window#berlin
+				.infowin{ :'ng-non-bindable' => 'ng-non-bindable' }
+					.bodyContent
+						.col-sm-6
+							%img.img-responsive{ :'src' => 'img/locations/berlin.jpg' }
+						.col-sm-6
+							%h3
+								Berlín
+							%p
+								Entrena con especialistas exclusivos de X-Men y conoce como se grabaron estas épicas escenas.
+			
+			%marker{ :'position' => '41.2659795,-77.2436489', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "newyork")' }
 			%info-window#newyork
 				.infowin{ :'ng-non-bindable' => 'ng-non-bindable' }
 					.bodyContent
@@ -35,6 +67,7 @@
 							%p
 								Conoce al equipo de efectos especiales de la película quienes además te enseñaran sus técnicas en una mutante Masterclass.
 
+			%marker{ :'position' => '35.307579,-118.0860867', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "vegas")' }
 			%info-window#vegas
 				.infowin{ :'ng-non-bindable' => 'ng-non-bindable' }
 					.bodyContent
@@ -46,6 +79,29 @@
 							%p
 								Explora los sitios de la destrucción del Apocalipsis en una aventura épica por el desierto y luces de esta gran ciudad.
 			
+			%marker{ :'position' => '29.4981818,31.4138131', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "cairo")' }
+			%info-window#cairo
+				.infowin{ :'ng-non-bindable' => 'ng-non-bindable' }
+					.bodyContent
+						.col-sm-6
+							%img.img-responsive{ :'src' => 'img/locations/cairo.jpg' }
+						.col-sm-6
+							%h3
+								El Cairo
+							%p
+								Vive como un egipcio, explora por el desierto al estilo de X-Men y vive un magnifico show de luces y sonido junto a las pirámides.
+			
+			%marker{ :'position' => '45.5225697,-73.9183845', :'icon' => '{ url:"img/marker.png" }', :'on-click' => 'map.showInfoWindow(event, "montreal")' }
+			%info-window#montreal
+				.infowin{ :'ng-non-bindable' => 'ng-non-bindable' }
+					.bodyContent
+						.col-sm-6
+							%img.img-responsive{ :'src' => 'img/locations/montreal.jpg' }
+						.col-sm-6
+							%h3
+								Montreal
+							%p
+								Absorbe las extraordinarias habilidades de los mutantes en un exclusiva Masterclass con especialistas X-Men y conoce esta gran ciudad.
 
 
 	.modal-footer
