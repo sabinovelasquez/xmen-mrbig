@@ -1,318 +1,268 @@
 @import 'functions';
 $yellow: #f6b63e;
 $red: #c0392b;
-
+$blue: #2EA3F2;
 
 html,
 body,
 .container,
-.row
-{
-    height: 100%;
+.row{
+  height: 100%;
 }
-.black-bg
-{
-    color: white;
-    background: rgba(black, .8);
-    h2
-    {
-        margin-top: 20px;
-        margin-bottom: 20px;
-
-        color: $yellow;
+.black-bg{
+  color: white;
+  background: rgba(black, .8);
+  h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: $yellow;
+  }
+}
+.mapbtn{
+    color:$blue!important;
+    cursor: pointer;
+    opacity: .8;
+    &:hover{
+        opacity: 1;
     }
 }
-
-.title
-{
-    width: 80%;
-    margin: auto;
+.title{
+  width: 80%;
+  margin: auto;
 }
 input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button
-{
-    margin: 0;
+input[type=number]::-webkit-outer-spin-button{
+  margin: 0;
 
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
-
-.modal-lg
-{
-    width: 94%;
-    margin: 10px auto;
-    @media(min-width:768px)
-    {
-        width: 80%;
-    }
-    .modal-body
-    {
-        padding: 0;
-        .map
-        {
-            min-height: 420px;
-        }
-    }
-    .bodyContent
-    {
-        color: black;
-        img
-        {
-            width: 100%;
-            max-width: 100%;
-        }
-    }
+.ng-map-info-window{
+  color: white;
+  background-color: black;
 }
-
-.modal-content
-{
+.ng-map-info-window div:first-child > div:nth-child(1){
+  border-top-color: black !important;
+}
+.ng-map-info-window div:first-child > div:nth-child(3) div{
+  background-color: transparent !important;
+}
+.ng-map-info-window div:first-child > div:nth-child(4){
+  background-color: transparent !important;
+}
+.modal-lg{
+  width: 94%;
+  margin: 10px auto;
+  @media(min-width:768px){
+    width: 80%;
+  }
+  .modal-body{
+    padding: 0;
+    h3{
+      font-family: 'GillSansMT-Condensed';
+      font-size: 2em;
+      text-transform: uppercase;
+      color: $yellow;
+    }
+    p{
+      font-family: 'GillSansMT-Condensed';
+      font-size: 1.5em;
+    }
+    .map{
+      min-height: 420px;
+    }
+  }
+  .bodyContent{
     color: white;
-    border: 1px solid $yellow;
-    background: rgba(black,.9);
-    .modal-header
-    {
-        border-bottom: 1px solid $yellow;
-        h4
-        {
-            color: $yellow;
-        }
-        .close
-        {
-            color: $yellow;
-        }
+    img{
+      width: 100%;
+      max-width: 100%;
     }
-    .modal-body
-    {
-        p
-        {
-            font-size: 1.2em;
-            strong
-            {
-                color: $yellow;
-            }
-        }
-    }
-    .modal-footer
-    {
-        border-top: 1px solid $yellow;
-        button
-        {
-            color: $yellow;
-            border: 1px solid $yellow;
-            -webkit-border-radius: 5px;
-               -moz-border-radius: 5px;
-                    border-radius: 5px;
-            background: black;
-        }
-    }
+  }
 }
-body
-{
-    font-family: 'FuturaStd-Condensed';
 
-    background: url('../img/background.jpg') top center fixed;
-    background-size: cover;
-    hr
-    {
-        float: left;
-
-        width: 100%;
-
-        border: none;
-				margin-top: 0;
-				margin-bottom: 0;
-
+.modal-content{
+  color: white;
+  border: 1px solid $yellow;
+  background: rgba(black,.9);
+  .modal-header{
+    border-bottom: 1px solid $yellow;
+    h4{
+      color: $yellow;
     }
-    .black-op
-    {
-        float: left;
-
-        min-height: 100%;
-
-        background: rgba(black, .7) top center fixed;
-        p
-        {
-            font-size: 1.3em;
-
-            margin: 10px 20px;
-            a,
-            strong
-            {
-                font-family: 'FuturaStd-CondensedBold';
-                font-size: 1.1em;
-            }
-        }
+    .close{
+      color: $yellow;
     }
-    .xmen
-    {
-        position: fixed;
-        z-index: -1;
-        right: 0;
-        bottom: 0;
-
-        width: 100%;
-        height: 100%;
-
-        background: url('../img/xmen.png') bottom right no-repeat;
-        background-size: contain;
-        @media( min-width: 1024px
-        ){
-            width: 60%;
-        }
-        .logo
-        {
-            position: absolute;
-            bottom: 15%;
-
-            width: 50%;
-            height: 150px;
-            margin-left: 33.33%;
-
-            background: url('../img/xmen-logo.png') center no-repeat;
-            background-size: contain;
-        }
-        .fox
-        {
-            position: absolute;
-            bottom: 6%;
-
-            width: 50%;
-            height: 30px;
-            margin-left: 33.33%;
-
-            background: url('../img/fox.png') center no-repeat;
-            background-size: contain;
-        }
+  }
+  .modal-body{
+    p{
+      strong{
+        color: $yellow;
+      }
     }
-    .info
-    {
-        margin-top: -20%;
-
+  }
+  .modal-footer{
+    border-top: 1px solid $yellow;
+    button{
+      color: $yellow;
+      border: 1px solid $yellow;
+      -webkit-border-radius: 5px;
+         -moz-border-radius: 5px;
+              border-radius: 5px;
+      background: black;
+    }
+  }
+}
+body{
+  font-family: 'FuturaStd-Condensed';
+  background: url('../img/background.jpg') top center fixed;
+  background-size: cover;
+  hr{
+    float: left;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: none;
+  }
+  .black-op{
+    float: left;
+    min-height: 100%;
+    background: rgba(black, .7) top center fixed;
+    p{
+      font-size: 1.3em;
+      margin: 10px 20px;
+      a,
+      strong{
+        font-family: 'FuturaStd-CondensedBold';
+        font-size: 1.1em;
+      }
+    }
+  }
+  .xmen{
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/xmen.png') bottom right no-repeat;
+    background-size: contain;
+    @media( min-width: 1024px){
+      width: 60%;
+    }
+    .logo{
+      position: absolute;
+      bottom: 15%;
+      width: 50%;
+      height: 150px;
+      margin-left: 33.33%;
+      background: url('../img/xmen-logo.png') center no-repeat;
+      background-size: contain;
+    }
+    .fox{
+      position: absolute;
+      bottom: 6%;
+      width: 50%;
+      height: 30px;
+      margin-left: 33.33%;
+      background: url('../img/fox.png') center no-repeat;
+      background-size: contain;
+    }
+  }
+  .info{
+    margin-top: -20%;
+    color: white;
+    strong{
+      font-size: 1.1em;
+    }
+    a,
+    .legal{
+      color: $yellow;
+    }
+  }
+  #form{
+    font-family: 'MyriadPro-Regular';
+    margin: 20px;
+    input.code{
+      text-transform: uppercase;
+    }
+    .has-error,
+    .help-block{
+      font-size: .9em;
+      margin: 5px 0;
+      padding: 0;
+      input{
+        border: 2px solid $red;
+      }
+    }
+    .inv{
+      opacity: 0;
+    }
+    .pad-5{
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .mar-6{
+      margin-right: 6px;
+      margin-left: 6px;
+    }
+    .nopad{
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .num{
+      font-size: 28px;
+      float: left;
+      width: 100%;
+      color: white;
+    }
+    .note{
+      position: relative;
+      top: -10px;
+      color: white;
+    }
+    label{
+      color: white;
+    }
+    input{
+      -webkit-border-radius: 0;
+         -moz-border-radius: 0;
+              border-radius: 0;
+    }
+    a,
+    button{
+      margin-bottom: 40px;
+    }
+    .warn{
+      font-size: 1.1em;
+      color: $red;
+    }
+    .bases{
+      line-height: 25px;
+      color: white;
+      a{
+        color: $yellow;
+      }
+    }
+    button{
+      border: none;
+      background: transparent;
+      .send{
+        line-height: 49px;
+        width: 155px;
+        height: 49px;
+        cursor: no-drop;
+        text-align: center;
+        text-transform: uppercase;
+        opacity: .5;
         color: white;
-        strong
-        {
-            font-size: 1.1em;
+        background: url('../img/button.png');
+        &.active{
+          cursor: pointer;
+          opacity: 1;
         }
-        a,
-        .legal
-        {
-            color: $yellow;
-        }
+      }
     }
-    #form
-    {
-        font-family: 'MyriadPro-Regular';
-
-        margin: 20px;
-        input.code
-        {
-            text-transform: uppercase;
-        }
-        .has-error,
-        .help-block
-        {
-            font-size: .9em;
-
-            margin: 5px 0;
-            padding: 0;
-            input
-            {
-                border: 2px solid $red;
-            }
-        }
-        .inv
-        {
-            opacity: 0;
-        }
-        .pad-5
-        {
-            padding-right: 0;
-            padding-left: 0;
-        }
-        .mar-6
-        {
-            margin-right: 6px;
-            margin-left: 6px;
-        }
-        .nopad
-        {
-            padding-right: 0;
-            padding-left: 0;
-        }
-        .num
-        {
-            font-size: 28px;
-
-            float: left;
-
-            width: 100%;
-
-            color: white;
-        }
-        .note
-        {
-            position: relative;
-            top: -10px;
-
-            color: white;
-        }
-        label
-        {
-            color: white;
-        }
-        input
-        {
-            -webkit-border-radius: 0;
-               -moz-border-radius: 0;
-                    border-radius: 0;
-        }
-        a,
-        button
-        {
-            margin-bottom: 40px;
-        }
-        .warn
-        {
-            font-size: 1.1em;
-
-            color: $red;
-        }
-        .bases
-        {
-            line-height: 25px;
-
-            color: white;
-            a
-            {
-                color: $yellow;
-            }
-        }
-        button
-        {
-            border: none;
-            background: transparent;
-            .send
-            {
-                line-height: 49px;
-
-                width: 155px;
-                height: 49px;
-
-                cursor: no-drop;
-                text-align: center;
-                text-transform: uppercase;
-
-                opacity: .5;
-                color: white;
-                background: url('../img/button.png');
-                &.active
-                {
-                    cursor: pointer;
-
-                    opacity: 1;
-                }
-            }
-        }
-    }
+  }
 }
