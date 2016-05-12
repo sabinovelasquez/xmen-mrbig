@@ -1,0 +1,22 @@
+---
+title: Contador - Promoción Mutant Energy
+layout: tabla
+---
+
+.container{ :'ng-controller' => 'fireCtrl' }
+  .table-responsive
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Num 
+          %th Código
+          %th Nombre
+          %th Email
+          %th Fono
+      %tbody
+        %tr{ :'ng-repeat' => '(key, data) in json track by $index' }
+          %th {{$index + 1}}
+          %td {{key}}
+          %td {{data.nombre}}
+          %td {{data.email}}
+          %td {{data.prefijo}} - {{data.movil}}
